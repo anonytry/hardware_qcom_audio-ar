@@ -976,9 +976,8 @@ static void out_update_source_metadata_v7(
                                 const struct source_metadata_v7 *source_metadata) {
 
     int32_t ret = 0;
-    if (stream == NULL
-            || (source_metadata == NULL)) {
-        AHAL_ERR("%s: stream or source_metadata is NULL", __func__);
+    if (stream == NULL || source_metadata == NULL || source_metadata->track_count == 0) {
+        AHAL_ERR("%s: stream or source_metadata is NULL or track_count is 0", __func__);
         return;
     }
 

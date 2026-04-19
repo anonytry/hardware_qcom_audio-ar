@@ -19,6 +19,7 @@ LOCAL_CFLAGS += -Wno-format
 LOCAL_CFLAGS += -Wno-unused-value
 LOCAL_CFLAGS += -Wall
 LOCAL_CFLAGS += -Werror
+LOCAL_CFLAGS += -D_ASM_GENERIC_SIGNAL_H
 
 ifeq ($(strip $(AUDIO_FEATURE_ENABLED_PROXY_DEVICE)),true)
     LOCAL_CFLAGS += -DAFE_PROXY_ENABLED
@@ -171,6 +172,7 @@ LOCAL_CFLAGS += -Wno-unused-local-typedef
 LOCAL_CFLAGS += -Wno-format
 LOCAL_CFLAGS += -Wall
 LOCAL_CFLAGS += -Werror
+LOCAL_CFLAGS += -D_ASM_GENERIC_SIGNAL_H
 
 LOCAL_SRC_FILES:= \
         volume_listener.c
