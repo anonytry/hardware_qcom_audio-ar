@@ -1,13 +1,10 @@
 LOCAL_PATH := $(call my-dir)
 
-include $(CLEAR_VARS)
-
-LOCAL_MODULE := libaudio_extn_headers
-LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/inc
-
-LOCAL_VENDOR_MODULE := true
-
-include $(BUILD_HEADER_LIBRARY)
+#include $(CLEAR_VARS)
+#LOCAL_MODULE := libaudio_extn_headers
+#LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/inc
+#LOCAL_VENDOR_MODULE := true
+#include $(BUILD_HEADER_LIBRARY)
 
 #-------------------------------------------
 #            Build HFP LIB
@@ -44,6 +41,7 @@ LOCAL_SHARED_LIBRARIES := \
 
 LOCAL_C_INCLUDES := \
     $(LOCAL_PATH)/inc \
+    $(LOCAL_PATH)/../inc \
     external/expat/lib \
     system/media/audio_utils/include \
     $(call include-path-for, audio-route) \
@@ -85,6 +83,7 @@ LOCAL_SHARED_LIBRARIES := \
 
 LOCAL_C_INCLUDES := \
     $(LOCAL_PATH)/inc \
+    $(LOCAL_PATH)/../inc \
     external/expat/lib \
     system/media/audio_utils/include \
     $(call include-path-for, audio-route) \

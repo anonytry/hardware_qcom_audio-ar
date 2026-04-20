@@ -4,14 +4,11 @@ ifeq ($(filter _515_32go _515s_32go _515tiny_32go, $(TARGET_BOARD_SUFFIX)),)
 LOCAL_AUDIO_SERVICE_64 := taro parrot bengal holi blair
 endif #TARGET_BOARD_SUFFIX
 
-include $(CLEAR_VARS)
-
-LOCAL_MODULE := libaudio_hal_headers
-LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/inc
-
-LOCAL_VENDOR_MODULE := true
-
-include $(BUILD_HEADER_LIBRARY)
+#include $(CLEAR_VARS)
+#LOCAL_MODULE := libaudio_hal_headers
+#LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/inc
+#LOCAL_VENDOR_MODULE := true
+#include $(BUILD_HEADER_LIBRARY)
 
 ifneq ($(TARGET_PROVIDES_AUDIO_HAL),true)
 include $(CLEAR_VARS)
@@ -77,6 +74,7 @@ LOCAL_CPPFLAGS += -fexceptions
 
 LOCAL_C_INCLUDES += \
     $(LOCAL_PATH)/inc \
+    $(LOCAL_PATH)/audio_extn \
     system/media/audio_utils/include \
     external/expat/lib \
     $(call include-path-for, audio-effects)

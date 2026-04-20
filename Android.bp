@@ -1,0 +1,19 @@
+
+soong_namespace {
+}
+
+cc_library_headers {
+    name: "libaudio_extn_headers",
+    vendor: true,
+    export_include_dirs: [
+        "hal/audio_extn/inc",
+    ],
+}
+
+cc_library_headers {
+    name: "libaudio_hal_headers",
+    vendor: true,
+    export_include_dirs: [
+        "hal/inc",
+    ],
+}

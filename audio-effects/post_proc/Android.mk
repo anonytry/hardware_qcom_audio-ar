@@ -19,7 +19,7 @@ LOCAL_CFLAGS += -Wno-format
 LOCAL_CFLAGS += -Wno-unused-value
 LOCAL_CFLAGS += -Wall
 LOCAL_CFLAGS += -Werror
-LOCAL_CFLAGS += -D_ASM_GENERIC_SIGNAL_H
+LOCAL_CFLAGS += -D_ASM_GENERIC_SIGNAL_H -D_UAPI_ASM_GENERIC_SIGNAL_H
 
 ifeq ($(strip $(AUDIO_FEATURE_ENABLED_PROXY_DEVICE)),true)
     LOCAL_CFLAGS += -DAFE_PROXY_ENABLED
@@ -92,9 +92,6 @@ LOCAL_MODULE_OWNER := qti
 LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_C_INCLUDES := \
-        $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include \
-        $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/audio \
-        $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/techpack/audio/include \
         $(call include-path-for, audio-effects)
 
 ifeq ($(strip $(AUDIO_FEATURE_ENABLED_DLKM)),true)
@@ -172,7 +169,7 @@ LOCAL_CFLAGS += -Wno-unused-local-typedef
 LOCAL_CFLAGS += -Wno-format
 LOCAL_CFLAGS += -Wall
 LOCAL_CFLAGS += -Werror
-LOCAL_CFLAGS += -D_ASM_GENERIC_SIGNAL_H
+LOCAL_CFLAGS += -D_ASM_GENERIC_SIGNAL_H -D_UAPI_ASM_GENERIC_SIGNAL_H
 
 LOCAL_SRC_FILES:= \
         volume_listener.c
@@ -205,9 +202,6 @@ LOCAL_MODULE_OWNER := qti
 LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_C_INCLUDES := \
-        $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include \
-        $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/audio \
-        $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/techpack/audio/include \
         $(call include-path-for, audio-effects) \
         $(call include-path-for, audio-route) \
         system/media/audio_utils/include
